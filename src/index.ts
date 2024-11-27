@@ -16,6 +16,7 @@ export const add = (input: string): number => {
     .map((element) => Number(element.trim()))
     .reduce((sum, num) => {
       if (num < 0) negativeNumbers.push(num);
+      if (num > 1000) return sum;
       return Number(num + sum);
     });
 
