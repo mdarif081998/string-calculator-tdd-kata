@@ -21,4 +21,9 @@ describe("Should test the add function", () => {
         expect(add("1,10,4\n3,5,6")).toBe(29);
         expect(add("1,2\n3,4\n5,6,7")).toBe(28);
     });
+
+    it("should return the sum of all delimated numbers spread on multiple lines in input string with delimeter specified in starting like '//[delimiter]\n[numbers…]'", () => { 
+        expect(add("//;\n1;10;4\n3;5;6")).toBe(29);
+        expect(add("//@\n1@2\n3@4\n5@6@7")).toBe(28);
+    });
 });
