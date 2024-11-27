@@ -1,0 +1,29 @@
+{
+  "name": "string-calculator-tdd-kata",
+  "version": "1.0.0",
+  "description": "This is a Test Driven Developemnt exercise.",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
+    "prod": "node dist/index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdarif081998/string-calculator-tdd-kata.git"
+  },
+  "author": "MD ARIF",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdarif081998/string-calculator-tdd-kata/issues"
+  },
+  "homepage": "https://github.com/mdarif081998/string-calculator-tdd-kata#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
