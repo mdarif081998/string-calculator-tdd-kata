@@ -8,14 +8,24 @@ export const add = (input: string): number => {
     delimeter = input.substring(2, input.indexOf("\n"));
     input = input.substring(input.indexOf("\n") + 1);
   }
-
+  const negativeNumbers = new Array();
   const output = input
     .split("\n")
     .join(delimeter)
     .split(delimeter)
     .map((element) => Number(element.trim()))
-    .reduce((sum, num) => Number(num + sum));
+    .reduce((sum, num) => {
+      if (num < 0) negativeNumbers.push(num);
+      return Number(num + sum);
+    });
+
+  if (negativeNumbers.length > 0)
+    throw `negative numbers not allowed ${negativeNumbers.join(",")}`;
   return Number(output);
 };
 
-add(inputString);
+try {
+  add(inputString);
+} catch (err: any) {
+  console.error(err.toString());
+}
