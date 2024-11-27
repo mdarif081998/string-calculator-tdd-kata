@@ -16,4 +16,9 @@ describe("Should test the add function", () => {
         expect(add("2,4,7")).toBe(13);
         expect(add("1,2,3,4,5,6,7")).toBe(28);
     });
+
+    it("should return the sum of all comma delimated numbers spread on multiple lines in input string", () => { 
+        expect(add("1,10,4\n3,5,6")).toBe(29);
+        expect(add("1,2\n3,4\n5,6,7")).toBe(28);
+    });
 });
