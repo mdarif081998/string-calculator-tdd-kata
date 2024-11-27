@@ -1,11 +1,9 @@
 
 const inputString = "";
 
-export const add = (input: string) => {
-    console.log(`Input: ${input}`)
+export const add = (input: string): number => {
     if(!input) return 0;
-    return input;
+    return Number(input);
 }
 
-const result  = add(inputString);
-console.log(`Output: ${result}`);
+add(inputString);
