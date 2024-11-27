@@ -4,7 +4,14 @@ export const add = (input: string): number => {
   let delimeter = ",";
   if (!input) return 0;
 
-  if (input.startsWith("//")) {
+  if (input.startsWith("//[")) {
+    let firstDelimeter = '';
+    while(input.includes('[')) {
+        firstDelimeter = input.substring(input.indexOf("[")+1, input.indexOf("]"));
+        input = input.substring(input.indexOf("]") + 1);
+        input = input.split(firstDelimeter).join(delimeter);
+    }
+  } else if (input.startsWith("//")) {
     delimeter = input.substring(2, input.indexOf("\n"));
     input = input.substring(input.indexOf("\n") + 1);
   }
