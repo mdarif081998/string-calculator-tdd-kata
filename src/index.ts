@@ -1,4 +1,4 @@
-const inputString = "";
+const inputString = "//@\n1@2\n3@4\n5@6@7";
 
 export const add = (input: string): number => {
   let delimeter = ",";
@@ -33,7 +33,7 @@ export const add = (input: string): number => {
 };
 
 try {
-  add(inputString);
+  console.log(add(inputString));
 } catch (err: any) {
   console.error(err.toString());
 }
