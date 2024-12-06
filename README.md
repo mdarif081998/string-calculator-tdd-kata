@@ -1,6 +1,6 @@
 # string-calculator-tdd-kata
 
-This is a Test Driven Developemnt exercise.
+This is a Test Driven Development exercise.
 
 ## Instructions to Complete
 ### Step 1: the simplest thing
@@ -25,7 +25,7 @@ test for it)
 ### Step 4: support different delimiters
 Support different delimiters: to change a delimiter, the beginning of the string will contain a separate line that looks like this:
 
-"//[delimiter]\n[numbers...]"
+'//[delimiter]\n[numbers...]'
 
 For example "//;\n1;2" should return 3 where the default delimiter is ';'.
 
@@ -41,6 +41,12 @@ If there are multiple negatives, show all of them in the exception message.
 ### Step 6: ignore big numbers
 Numbers bigger than 1000 should be ignored, so adding 2 + 1001 = 2
 
+### step 7: Delimiters can be of any length with the following format: `//[delimiter]\n`
+for example: `//[***]\n1***2***3` == 6
+
+### step 8: Allow multiple delimiters like this: `//[delim1][delim2]\n`
+for example `//[*][%]\n1*2%3` == 6.
+handle multiple delimiters with length longer than one char for example `//[**][%%]\n1**2%%3` == 6
 
 
 ## Setup Instructions
