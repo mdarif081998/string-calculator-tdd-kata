@@ -1,6 +1,6 @@
 const inputString = "//@\n1@2\n3@4\n5@6@7";
 
-export const add = (input: string): number => {
+export const calculator = (input: string): number => {
   let delimeter = ",";
   if (!input) return 0;
 
@@ -21,10 +21,15 @@ export const add = (input: string): number => {
     .join(delimeter)
     .split(delimeter)
     .map((element) => Number(element.trim()))
-    .reduce((sum, num) => {
+    .reduce((res, num) => {
       if (num < 0) negativeNumbers.push(num);
-      if (num > 1000) return sum;
-      return Number(num + sum);
+      if (num > 1000) return res;
+      switch (true) {
+        case delimeter == '*' :
+          return Number(res* num);
+        default : return Number(num + res);
+      }
+      
     });
 
   if (negativeNumbers.length > 0)
@@ -32,8 +37,3 @@ export const add = (input: string): number => {
   return Number(output);
 };
 
-try {
-  console.log(add(inputString));
-} catch (err: any) {
-  console.error(err.toString());
-}
